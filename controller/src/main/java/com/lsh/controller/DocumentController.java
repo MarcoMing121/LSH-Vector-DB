@@ -9,14 +9,11 @@ import com.lsh.service.WorkflowManager;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.http.HttpStatus;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
-import org.apache.hadoop.fs.FileSystem;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.net.URI;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.UUID;
@@ -111,20 +108,6 @@ public class DocumentController {
             logger.error("Failed to process query request", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body("Query failed: " + e.getMessage());
-        }
-    }
-
-    //TODO: Job status check to be implemented
-    @GetMapping("/status/{jobId}")
-    public ResponseEntity<String> getJobStatus(@PathVariable String jobId) {
-        try {
-            // Job status check logic to be implemented
-            // Can check HDFS marker files or other methods
-            return ResponseEntity.ok("Job status check not implemented");
-        } catch (Exception e) {
-            logger.error("Failed to check job status", e);
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("Status check failed: " + e.getMessage());
         }
     }
 }

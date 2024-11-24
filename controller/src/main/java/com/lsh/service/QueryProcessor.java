@@ -26,7 +26,6 @@ public class QueryProcessor {
     private static final String DATA_FAMILY = "data";
     private static final String DOCUMENTS_COLUMN = "documents";
     private static final String CONTENT_COLUMN = "content";
-    private static final String EMBEDDING_COLUMN = "embedding";
     private static final String METADATA_COLUMN = "metadata";
 
     public static void main(String[] args) {
@@ -165,7 +164,6 @@ public class QueryProcessor {
             Table sourceTable = connection.getTable(TableName.valueOf(sourceTableName))) {
             
             JSONArray results = new JSONArray();
-            int processedDocs = 0;
             
             for (String docId : documentIds) {
                 Result result = sourceTable.get(new Get(Bytes.toBytes(docId)));
@@ -183,7 +181,6 @@ public class QueryProcessor {
                     )));
                     results.put(doc);
                     
-                    processedDocs++;
                 }
             }
             FileSystem fs = FileSystem.get(conf);

@@ -101,9 +101,7 @@ public class HBaseLoader {
         private List<Put> putList = new ArrayList<>();
         private static final int BATCH_SIZE = 100;
         private Table table;
-        private long processedCount = 0;
         private static final Connection connection;
-        private static final int LOG_INTERVAL = 1000;
     
         static {
             Configuration conf = HBaseConfiguration.create();
@@ -155,7 +153,6 @@ public class HBaseLoader {
                 put.addColumn(FAMILY, COL_NEED_SIGNATURE, Bytes.toBytes("false"));
                 
                 putList.add(put);
-                processedCount++;
                 
                 if (putList.size() >= BATCH_SIZE) {
                     table.put(putList);
@@ -191,7 +188,6 @@ public class HBaseLoader {
     }
 
     public static class JsonArrayInputFormat extends FileInputFormat<LongWritable, Text> {
-        private static final Logger logger = LoggerFactory.getLogger(JsonArrayInputFormat.class);
 
         @Override
         protected boolean isSplitable(JobContext context, Path file) {
@@ -266,7 +262,6 @@ public class HBaseLoader {
                 long seekPos = start - lookBehind;
                 fileIn.seek(seekPos);
                 
-                StringBuilder buffer = new StringBuilder();
                 int brackets = 0;
                 boolean foundStart = false;
                 
