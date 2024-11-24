@@ -1,0 +1,14 @@
+com/lsh/service/HBaseLoader$JsonArrayRecordReader.class
+com/lsh/App.class
+com/lsh/service/HBaseLoader.class
+com/lsh/controller/DocumentController.class
+com/lsh/service/SignatureCalculator$SignatureMapper.class
+com/lsh/service/SignatureCalculator.class
+com/lsh/service/LSH$LSHMapper.class
+com/lsh/service/RandomVectorGenerator.class
+com/lsh/service/LSH$LSHReducer.class
+com/lsh/service/HBaseLoader$JsonArrayInputFormat.class
+com/lsh/service/QueryProcessor.class
+com/lsh/service/LSH.class
+com/lsh/service/WorkflowManager.class
+com/lsh/service/HBaseLoader$JsonToHBaseMapper.class

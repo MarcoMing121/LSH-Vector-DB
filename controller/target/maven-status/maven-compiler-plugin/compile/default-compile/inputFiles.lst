@@ -1,0 +1,8 @@
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/service/WorkflowManager.java
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/service/SignatureCalculator.java
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/App.java
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/service/RandomVectorGenerator.java
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/service/HBaseLoader.java
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/service/QueryProcessor.java
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/service/LSH.java
+/home/marcowong/lsh_controller/controller/src/main/java/com/lsh/controller/DocumentController.java
